@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco Raro Moreno - Web Developer & Entrepreneur</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MRM</div>
+            <ul>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1 class="glitch" data-text="Marco Raro Moreno">Marco Raro Moreno</h1>
+            <p class="subtitle">Web Developer | Entrepreneur | Innovator</p>
+            <div class="cta-container">
+                <a href="#contact" class="cta-button">Get in Touch</a>
+                <a href="#projects" class="cta-button secondary">View Projects</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://picsum.photos/seed/marco/400/400" alt="Marco Raro Moreno" class="profile-image">
+                </div>
+                <div class="about-text">
+                    <p>Hello! I'm Marco Raro Moreno, a passionate web developer and entrepreneur with a knack for creating innovative digital solutions. With over 7 years of experience in the tech industry, I've honed my skills in both front-end and back-end development, specializing in creating robust and user-friendly web applications.</p>
+                    <p>My journey in tech has been driven by a constant desire to learn and push the boundaries of what's possible on the web. I'm not just a coder; I'm a problem solver who thrives on turning complex challenges into elegant, efficient solutions.</p>
+                    <p>When I'm not immersed in code, you can find me exploring emerging technologies, mentoring aspiring developers, or brainstorming my next big entrepreneurial idea. I believe in the power of technology to transform businesses and improve lives, and I'm always excited to take on new projects that align with this vision.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category" data-category="web">
+                    <h3><i class="fas fa-code"></i> Web Development</h3>
+                    <ul>
+                        <li><i class="fab fa-html5"></i> HTML5 & CSS3</li>
+                        <li><i class="fab fa-js"></i> JavaScript (ES6+)</li>
+                        <li><i class="fab fa-react"></i> React.js & Next.js</li>
+                        <li><i class="fab fa-node-js"></i> Node.js & Express</li>
+                        <li><i class="fas fa-server"></i> RESTful API Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category" data-category="app">
+                    <h3><i class="fas fa-mobile-alt"></i> Web App Development</h3>
+                    <ul>
+                        <li><i class="fas fa-layer-group"></i> Full-Stack Development</li>
+                        <li><i class="fas fa-database"></i> Database Design (SQL & NoSQL)</li>
+                        <li><i class="fas fa-cloud"></i> Cloud Services (AWS, Azure)</li>
+                        <li><i class="fas fa-mobile-alt"></i> Progressive Web Apps (PWAs)</li>
+                        <li><i class="fas fa-tachometer-alt"></i> Performance Optimization</li>
+                    </ul>
+                </div>
+                <div class="skill-category" data-category="business">
+                    <h3><i class="fas fa-briefcase"></i> Entrepreneurship</h3>
+                    <ul>
+                        <li><i class="fas fa-chart-line"></i> Business Strategy</li>
+                        <li><i class="fas fa-lightbulb"></i> Product Development</li>
+                        <li><i class="fas fa-search-dollar"></i> Market Research</li>
+                        <li><i class="fas fa-rocket"></i> Startup Management</li>
+                        <li><i class="fas fa-handshake"></i> Pitching & Fundraising</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://picsum.photos/seed/eckoconsulting/800/600');"></div>
+                    <div class="project-info">
+                        <h3>Ecko Consulting</h3>
+                        <p>Innovative consulting platform for sustainable business practices</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://picsum.photos/seed/management/800/600');"></div>
+                    <div class="project-info">
+                        <h3>Management Web App</h3>
+                        <p>Comprehensive web application for efficient business management</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card coming-soon">
+                    <div class="project-image" style="background-image: url('https://picsum.photos/seed/comingsoon/800/600');"></div>
+                    <div class="project-info">
+                        <h3>Coming Soon</h3>
+                        <p>Exciting new project in development. Stay tuned!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-button close"></div>
+                    <div class="terminal-button minimize"></div>
+                    <div class="terminal-button maximize"></div>
+                </div>
+                <div class="terminal-body">
+                    <form id="contact-form" class="terminal-form">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                    <div id="formStatus"></div>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+        document.getElementById("contact-form").addEventListener("submit", async function(event) {
+            event.preventDefault(); // Prevent page reload
+            
+            let form = event.target;
+            let formData = new FormData(form);
+            
+            try {
+                let response = await fetch("https://formspree.io/f/xqaelwqg", {
+                    method: "POST",
+                    body: formData,
+                    headers: { "Accept": "application/json" }
+                });
+                
+                let formStatus = document.getElementById("formStatus");
+                if (response.ok) {
+                    formStatus.innerHTML = "<p style='color: green;'>Thank you! Your message has been sent.</p>";
+                    form.reset(); // Clears form fields
+                } else {
+                    formStatus.innerHTML = "<p style='color: red;'>Oops! Something went wrong. Please try again.</p>";
+                }
+            } catch (error) {
+                document.getElementById("formStatus").innerHTML = "<p style='color: red;'>Network error. Please check your connection.</p>";
+            }
+        });
+        </script>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Marco Raro Moreno. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/yourusername" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com/yourusername" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
