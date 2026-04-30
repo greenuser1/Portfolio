@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ── Loader ── */
         .loader-container {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-color: #0a0a0a; display: flex; justify-content: center;
@@ -41,67 +42,131 @@
             width: 300px; height: 300px;
         }
         .circle { position: absolute; border: 4px solid transparent; border-radius: 50%; }
-        .circle-1 { width: 100%; height: 100%; border-top-color: #6c63ff; animation: rotate 2s linear infinite; }
-        .circle-2 { width: 80%; height: 80%; top: 10%; left: 10%; border-right-color: #ff6b6b; animation: rotate-reverse 1.5s linear infinite; }
-        .circle-3 { width: 60%; height: 60%; top: 20%; left: 20%; border-bottom-color: #4caf50; animation: rotate 1s linear infinite; }
+        .circle-1 { width:100%; height:100%; border-top-color:#6c63ff; animation:rotate 2s linear infinite; }
+        .circle-2 { width:80%; height:80%; top:10%; left:10%; border-right-color:#ff6b6b; animation:rotate-reverse 1.5s linear infinite; }
+        .circle-3 { width:60%; height:60%; top:20%; left:20%; border-bottom-color:#4caf50; animation:rotate 1s linear infinite; }
         .progress-bar {
             position: absolute; bottom: 20%; left: 50%; transform: translateX(-50%);
             width: 300px; height: 4px; background-color: rgba(255,255,255,0.1); overflow: hidden;
         }
-        .progress { width: 0%; height: 100%; background-color: #6c63ff; animation: progress 2s ease-in-out forwards; }
+        .progress { width:0%; height:100%; background-color:#6c63ff; animation:progress 2s ease-in-out forwards; }
         @keyframes glitch-animation {
-            0%   { text-shadow: 0.05em 0 0 #ff6b6b, -0.05em -0.025em 0 #4caf50, 0.025em 0.05em 0 #6c63ff; }
-            14%  { text-shadow: 0.05em 0 0 #ff6b6b, -0.05em -0.025em 0 #4caf50, 0.025em 0.05em 0 #6c63ff; }
-            15%  { text-shadow: -0.05em -0.025em 0 #ff6b6b, 0.025em 0.025em 0 #4caf50, -0.05em -0.05em 0 #6c63ff; }
-            49%  { text-shadow: -0.05em -0.025em 0 #ff6b6b, 0.025em 0.025em 0 #4caf50, -0.05em -0.05em 0 #6c63ff; }
-            50%  { text-shadow: 0.025em 0.05em 0 #ff6b6b, 0.05em 0 0 #4caf50, 0 -0.05em 0 #6c63ff; }
-            99%  { text-shadow: 0.025em 0.05em 0 #ff6b6b, 0.05em 0 0 #4caf50, 0 -0.05em 0 #6c63ff; }
+            0%,14% { text-shadow: 0.05em 0 0 #ff6b6b, -0.05em -0.025em 0 #4caf50, 0.025em 0.05em 0 #6c63ff; }
+            15%,49% { text-shadow: -0.05em -0.025em 0 #ff6b6b, 0.025em 0.025em 0 #4caf50, -0.05em -0.05em 0 #6c63ff; }
+            50%,99% { text-shadow: 0.025em 0.05em 0 #ff6b6b, 0.05em 0 0 #4caf50, 0 -0.05em 0 #6c63ff; }
             100% { text-shadow: -0.025em 0 0 #ff6b6b, -0.025em -0.025em 0 #4caf50, -0.025em -0.05em 0 #6c63ff; }
         }
         @keyframes glitch-anim-1 {
-            0%  { clip: rect(90px,9999px,74px,0); } 5%  { clip: rect(64px,9999px,98px,0); }
-            10% { clip: rect(92px,9999px,90px,0); } 15% { clip: rect(31px,9999px,92px,0); }
-            20% { clip: rect(26px,9999px,70px,0); } 25% { clip: rect(12px,9999px,3px,0); }
-            30% { clip: rect(3px,9999px,78px,0); }  35% { clip: rect(16px,9999px,33px,0); }
-            40% { clip: rect(95px,9999px,90px,0); } 45% { clip: rect(100px,9999px,85px,0); }
-            50% { clip: rect(33px,9999px,1px,0); }  55% { clip: rect(3px,9999px,12px,0); }
-            60% { clip: rect(48px,9999px,43px,0); } 65% { clip: rect(59px,9999px,98px,0); }
-            70% { clip: rect(82px,9999px,32px,0); } 75% { clip: rect(94px,9999px,9px,0); }
-            80% { clip: rect(79px,9999px,3px,0); }  85% { clip: rect(32px,9999px,89px,0); }
-            90% { clip: rect(79px,9999px,5px,0); }  95% { clip: rect(94px,9999px,84px,0); }
-            100%{ clip: rect(42px,9999px,97px,0); }
+            0%{clip:rect(90px,9999px,74px,0)} 5%{clip:rect(64px,9999px,98px,0)} 10%{clip:rect(92px,9999px,90px,0)}
+            15%{clip:rect(31px,9999px,92px,0)} 20%{clip:rect(26px,9999px,70px,0)} 25%{clip:rect(12px,9999px,3px,0)}
+            30%{clip:rect(3px,9999px,78px,0)} 35%{clip:rect(16px,9999px,33px,0)} 40%{clip:rect(95px,9999px,90px,0)}
+            45%{clip:rect(100px,9999px,85px,0)} 50%{clip:rect(33px,9999px,1px,0)} 55%{clip:rect(3px,9999px,12px,0)}
+            60%{clip:rect(48px,9999px,43px,0)} 65%{clip:rect(59px,9999px,98px,0)} 70%{clip:rect(82px,9999px,32px,0)}
+            75%{clip:rect(94px,9999px,9px,0)} 80%{clip:rect(79px,9999px,3px,0)} 85%{clip:rect(32px,9999px,89px,0)}
+            90%{clip:rect(79px,9999px,5px,0)} 95%{clip:rect(94px,9999px,84px,0)} 100%{clip:rect(42px,9999px,97px,0)}
         }
         @keyframes glitch-anim-2 {
-            0%  { clip: rect(65px,9999px,100px,0); } 5%  { clip: rect(52px,9999px,74px,0); }
-            10% { clip: rect(79px,9999px,85px,0); }  15% { clip: rect(20px,9999px,70px,0); }
-            20% { clip: rect(15px,9999px,95px,0); }  25% { clip: rect(60px,9999px,40px,0); }
-            30% { clip: rect(30px,9999px,50px,0); }  35% { clip: rect(75px,9999px,5px,0); }
-            40% { clip: rect(55px,9999px,25px,0); }  45% { clip: rect(45px,9999px,65px,0); }
-            50% { clip: rect(10px,9999px,80px,0); }  55% { clip: rect(85px,9999px,35px,0); }
-            60% { clip: rect(5px,9999px,90px,0); }   65% { clip: rect(40px,9999px,50px,0); }
-            70% { clip: rect(70px,9999px,20px,0); }  75% { clip: rect(25px,9999px,75px,0); }
-            80% { clip: rect(80px,9999px,10px,0); }  85% { clip: rect(35px,9999px,60px,0); }
-            90% { clip: rect(50px,9999px,45px,0); }  95% { clip: rect(95px,9999px,30px,0); }
-            100%{ clip: rect(58px,9999px,53px,0); }
+            0%{clip:rect(65px,9999px,100px,0)} 5%{clip:rect(52px,9999px,74px,0)} 10%{clip:rect(79px,9999px,85px,0)}
+            15%{clip:rect(20px,9999px,70px,0)} 20%{clip:rect(15px,9999px,95px,0)} 25%{clip:rect(60px,9999px,40px,0)}
+            30%{clip:rect(30px,9999px,50px,0)} 35%{clip:rect(75px,9999px,5px,0)} 40%{clip:rect(55px,9999px,25px,0)}
+            45%{clip:rect(45px,9999px,65px,0)} 50%{clip:rect(10px,9999px,80px,0)} 55%{clip:rect(85px,9999px,35px,0)}
+            60%{clip:rect(5px,9999px,90px,0)} 65%{clip:rect(40px,9999px,50px,0)} 70%{clip:rect(70px,9999px,20px,0)}
+            75%{clip:rect(25px,9999px,75px,0)} 80%{clip:rect(80px,9999px,10px,0)} 85%{clip:rect(35px,9999px,60px,0)}
+            90%{clip:rect(50px,9999px,45px,0)} 95%{clip:rect(95px,9999px,30px,0)} 100%{clip:rect(58px,9999px,53px,0)}
         }
-        @keyframes particle-animation {
-            0%   { transform: translate(0,0); opacity: 1; }
-            100% { transform: translate(var(--x),var(--y)); opacity: 0; }
-        }
-        @keyframes rotate         { 0%{transform:rotate(0deg);}   100%{transform:rotate(360deg);} }
-        @keyframes rotate-reverse { 0%{transform:rotate(0deg);}   100%{transform:rotate(-360deg);} }
-        @keyframes progress       { 0%{width:0%;}                 100%{width:100%;} }
-        .matrix-container {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; opacity: 0.3;
-        }
+        @keyframes particle-animation { 0%{transform:translate(0,0);opacity:1} 100%{transform:translate(var(--x),var(--y));opacity:0} }
+        @keyframes rotate         { to { transform: rotate(360deg); } }
+        @keyframes rotate-reverse { to { transform: rotate(-360deg); } }
+        @keyframes progress       { from { width:0%; } to { width:100%; } }
+        .matrix-container { position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; opacity:0.3; }
         .matrix-column {
-            position: absolute; top: -100px; color: #0f0; font-family: 'Courier New', monospace;
-            font-size: 1.2rem; line-height: 1; white-space: nowrap; animation: matrix-rain linear infinite;
+            position:absolute; top:-100px; color:#0f0; font-family:'Courier New',monospace;
+            font-size:1.2rem; line-height:1; white-space:nowrap; animation:matrix-rain linear infinite;
         }
-        @keyframes matrix-rain {
-            0%   { transform: translateY(-100%); }
-            100% { transform: translateY(100vh); }
+        @keyframes matrix-rain { 0%{transform:translateY(-100%)} 100%{transform:translateY(100vh)} }
+
+        /* ── Skills redesign ── */
+        #skills { padding: 60px 20px; }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
+
+        /* Education card spans full width on last row */
+        .skill-category[data-category="education"] {
+            grid-column: 1 / -1;
+        }
+
+        .skill-category {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(108,99,255,0.2);
+            border-radius: 10px;
+            padding: 18px 20px;
+            transition: border-color 0.25s, transform 0.2s;
+        }
+        .skill-category:hover {
+            border-color: rgba(108,99,255,0.6);
+            transform: translateY(-2px);
+        }
+        .skill-category h3 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #6c63ff;
+            margin: 0 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .skill-category ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+        .skill-category ul li {
+            background: rgba(108,99,255,0.1);
+            border: 1px solid rgba(108,99,255,0.15);
+            border-radius: 20px;
+            padding: 4px 11px;
+            font-size: 0.78rem;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+        .skill-category ul li i { color: #6c63ff; font-size: 0.7rem; }
+
+        /* Education row: items inline but allow wrap */
+        .skill-category[data-category="education"] ul {
+            flex-direction: row;
+        }
+        .skill-category[data-category="education"] ul li {
+            background: rgba(255,107,107,0.07);
+            border-color: rgba(255,107,107,0.2);
+            font-size: 0.8rem;
+            padding: 5px 14px;
+        }
+        .skill-category[data-category="education"] ul li i { color: #ff6b6b; }
+
+        /* Cert links */
+        .cert-link {
+            color: inherit;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .cert-link:hover { color: #fff; }
+        .cert-link i.fa-external-link-alt { font-size: 0.6rem; opacity: 0.6; }
     </style>
 </head>
 
@@ -175,13 +240,13 @@
             <div class="skills-container">
 
                 <div class="skill-category" data-category="frontend">
-                    <h3><i class="fas fa-code"></i> Frontend Development</h3>
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
                     <ul>
                         <li><i class="fab fa-html5"></i> HTML5 &amp; CSS3</li>
-                        <li><i class="fab fa-js"></i> JavaScript (ES6+)</li>
+                        <li><i class="fab fa-js"></i> JavaScript ES6+</li>
                         <li><i class="fab fa-react"></i> React.js &amp; Next.js</li>
-                        <li><i class="fas fa-cube"></i> React Three Fiber / 3D Web</li>
-                        <li><i class="fas fa-mobile-alt"></i> Responsive &amp; Mobile-First Design</li>
+                        <li><i class="fas fa-cube"></i> React Three Fiber</li>
+                        <li><i class="fas fa-mobile-alt"></i> Responsive Design</li>
                         <li><i class="fas fa-paint-brush"></i> UI/UX Fundamentals</li>
                     </ul>
                 </div>
@@ -191,33 +256,33 @@
                     <ul>
                         <li><i class="fab fa-node-js"></i> Node.js &amp; Express</li>
                         <li><i class="fas fa-database"></i> MongoDB &amp; SQL</li>
-                        <li><i class="fas fa-plug"></i> RESTful API Design</li>
+                        <li><i class="fas fa-plug"></i> REST APIs</li>
                         <li><i class="fas fa-layer-group"></i> Full-Stack Architecture</li>
                         <li><i class="fas fa-tasks"></i> CRUD Applications</li>
-                        <li><i class="fas fa-lock"></i> Authentication &amp; Security (JWT, CSRF)</li>
+                        <li><i class="fas fa-lock"></i> JWT &amp; CSRF Security</li>
                     </ul>
                 </div>
 
                 <div class="skill-category" data-category="tools">
-                    <h3><i class="fas fa-tools"></i> Tools &amp; Version Control</h3>
+                    <h3><i class="fas fa-tools"></i> Tools &amp; DevOps</h3>
                     <ul>
                         <li><i class="fab fa-git-alt"></i> Git &amp; GitHub</li>
-                        <li><i class="fas fa-terminal"></i> Command Line / Terminal</li>
-                        <li><i class="fas fa-cloud-upload-alt"></i> Vercel &amp; Netlify Deployment</li>
-                        <li><i class="fas fa-box"></i> npm / Package Management</li>
+                        <li><i class="fas fa-terminal"></i> CLI / Terminal</li>
+                        <li><i class="fas fa-cloud-upload-alt"></i> Vercel &amp; Netlify</li>
+                        <li><i class="fas fa-box"></i> npm</li>
                         <li><i class="fas fa-tachometer-alt"></i> Performance Optimization</li>
                         <li><i class="fas fa-chart-line"></i> SEO &amp; Analytics</li>
                     </ul>
                 </div>
 
                 <div class="skill-category" data-category="cloud">
-                    <h3><i class="fas fa-cloud"></i> Cloud &amp; Cybersecurity</h3>
+                    <h3><i class="fas fa-cloud"></i> Cloud &amp; Security</h3>
                     <ul>
                         <li><i class="fab fa-google"></i> Google Cloud Platform</li>
-                        <li><i class="fas fa-cloud"></i> Cloud Infrastructure Fundamentals</li>
+                        <li><i class="fas fa-cloud"></i> Cloud Infrastructure</li>
                         <li><i class="fas fa-shield-alt"></i> Cybersecurity Principles</li>
                         <li><i class="fas fa-network-wired"></i> Networking Fundamentals</li>
-                        <li><i class="fas fa-user-secret"></i> Threat Awareness &amp; Attack Prevention</li>
+                        <li><i class="fas fa-user-secret"></i> Threat &amp; Attack Prevention</li>
                         <li><i class="fas fa-key"></i> End-to-End Encryption</li>
                     </ul>
                 </div>
@@ -226,10 +291,19 @@
                     <h3><i class="fas fa-graduation-cap"></i> Education &amp; Certifications</h3>
                     <ul>
                         <li><i class="fas fa-university"></i> B.S. Software Engineering — Utah Tech University (May 2026)</li>
-                        <li><i class="fas fa-certificate"></i> Google Cloud Certification</li>
-                        <li><i class="fas fa-certificate"></i> Fortinet Certified Associate in Cybersecurity (2026–2028)</li>
-                        <li><i class="fas fa-certificate"></i> Cisco — Introduction to Cybersecurity</li>
-                        <li><i class="fas fa-book"></i> Continuous Learning &amp; Self-Development</li>
+                        <li>
+                            <a href="./Fortinet-Certified-Associate-in-Cybersecurity.pdf" class="cert-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-certificate"></i> Fortinet Certified Associate in Cybersecurity
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./I2CSUpdate20260330-32-cgk47q.pdf" class="cert-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-certificate"></i> Cisco — Intro to Cybersecurity
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </li>
+                        <li><i class="fab fa-google"></i> Google Cloud Certification</li>
                     </ul>
                 </div>
 
@@ -249,7 +323,7 @@
 
             <div class="projects-grid">
 
-                <!-- ── Websites ── -->
+                <!-- Websites -->
                 <div class="project-card" data-category="websites">
                     <div class="project-image" style="background-image:url('https://picsum.photos/seed/eckoconsulting/800/600');"></div>
                     <div class="project-info">
@@ -272,7 +346,7 @@
                     <div class="project-image" style="background-image:url('https://picsum.photos/seed/cafeteria/800/600');"></div>
                     <div class="project-info">
                         <h3>Cafeteria Website</h3>
-                        <p>A beautifully designed website for a modern café — menu, orders and ambiance in one seamless online experience.</p>
+                        <p>A beautifully designed website for a modern café — menu, orders and ambiance in one seamless experience.</p>
                         <a href="https://v0-cafeteria-website-design-bponlb.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
                     </div>
                 </div>
@@ -305,7 +379,7 @@
                 </div>
 
                 <div class="project-card" data-category="websites">
-                    <div class="project-image" style="background-image:url('https://picsum.photos/seed/calcalcompany/800/600');"></div>
+                    <div class="project-image" style="background-image:url('https://picsum.photos/seed/limestone42/800/600');"></div>
                     <div class="project-info">
                         <h3>Cal Company Website</h3>
                         <p>Corporate website for a lime &amp; calcium products company, presenting their services, products and contact information with a clean professional design.</p>
@@ -322,7 +396,7 @@
                     </div>
                 </div>
 
-                <!-- ── Full Stack ── -->
+                <!-- Full Stack -->
                 <div class="project-card" data-category="fullstack">
                     <div class="project-image" style="background-image:url('https://picsum.photos/seed/management/800/600');"></div>
                     <div class="project-info">
@@ -354,7 +428,7 @@
                     <div class="project-image" style="background-image:url('https://picsum.photos/seed/plantcareapp/800/600');"></div>
                     <div class="project-info">
                         <h3>Plant Care App</h3>
-                        <p>Mobile-friendly app that helps users track plant care schedules, watering reminders and gardening tips.</p>
+                        <p>Mobile-friendly app for tracking plant care schedules, watering reminders and gardening tips.</p>
                         <a href="https://pleasefix-1.onrender.com" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
                     </div>
                 </div>
@@ -368,7 +442,7 @@
                     </div>
                 </div>
 
-                <!-- ── Tools ── -->
+                <!-- Tools -->
                 <div class="project-card" data-category="tools">
                     <div class="project-image" style="background-image:url('https://picsum.photos/seed/seo/800/600');"></div>
                     <div class="project-info">
@@ -449,7 +523,7 @@
         <div class="footer-content">
             <p>&copy; 2026 Marco Raro Moreno. All rights reserved.</p>
             <div class="social-links">
-                <a href="https://github.com/itsglobalcode"              class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/itsglobalcode"               class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                 <a href="https://linkedin.com/in/marco-moreno-04770634a/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
